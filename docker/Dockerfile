@@ -7,6 +7,6 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN install-php-extensions gd pdo_mysql mysqli redis imagick zip
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get update && apt-get install -y nodejs cron vim
 
 WORKDIR /var/www/html/crawl-app
